@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
 import './App.css';
+import { Route, Routes} from "react-router-dom";
+import LoginForm from './Component/Login/login';
+import Register from './Component/Register/register';
+import ForgetPassword from './Component/Forget_Password/forget';
+import Staff from './Component/Staff_Login/staff';
 
 function App() {
+  // const handleLogin = (username) => {
+  //   alert(`Logged in as: ${username}`);
+  // };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <Routes>
+          <Route path = "/" element={<LoginForm />} />
+          <Route path = "/staff-login" element={<Staff />} />
+          <Route path = "/register" element={<Register />} /> 
+          <Route path = "/forgot-password" element={<ForgetPassword />} />
+        </Routes>
     </div>
   );
-}
+};
 
 export default App;
